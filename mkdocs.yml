@@ -1,0 +1,50 @@
+site_name: Technical Skills for Economics
+site_description: Practical technical guides for economics research and analysis.
+site_url: https://ethanbrown-economics.github.io/econ-toolkit/
+repo_name: econ-toolkit
+repo_url: https://github.com/EthanBrown-Economics/econ-toolkit
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Guides:
+      - Git & GitHub: git-github/README.md
+      - Markdown: markdown/README.md
+      - Command line: command-line/README.md
+      - LaTeX: latex/README.md
+      - R: r/README.md
+      - Stata: stata/README.md
+      - Python: python/README.md
+      - SQL: sql/README.md
+      - Data visualization: data-viz/README.md
+      - Machine learning: machine-learning/README.md
+      - Reproducible research: reproducible-research/README.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - tables
