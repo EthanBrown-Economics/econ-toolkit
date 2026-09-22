@@ -55,6 +55,10 @@ The elasticity is $\varepsilon = \frac{\partial \ln Q}{\partial \ln P}$.
 As shown in equation~\eqref{eq:ols}, ...
 ```
 
+**Renders as:**
+
+![Numbered equation Y sub i equals alpha plus beta X sub i plus epsilon sub i](images/eq-display.png)
+
 Multi-line derivations align on `=` with `align`:
 
 ```latex
@@ -63,6 +67,10 @@ Multi-line derivations align on `=` with `align`:
     \pi'(q) &= p(q) + p'(q) q - c'(q) = 0 \label{eq:foc}
 \end{align}
 ```
+
+**Renders as:**
+
+![Two aligned equations for profit and the first-order condition, numbered](images/eq-align.png)
 
 Use `align*` (or add `\nonumber`) to suppress numbering on a line. A system of equations with one shared brace:
 
@@ -85,11 +93,23 @@ Common economics notation:
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator*{\argmax}{arg\,max}
 % then: \E[X \mid Y], \Var(X), \argmax_{x} f(x)
+```
 
+**Renders as:**
+
+![Sum, product, and limit; partial and second derivatives; expectation, variance, and argmax notation](images/eq-operators.png)
+
+```latex
 % Matrices and vectors
 \begin{pmatrix} a & b \\ c & d \end{pmatrix}
 \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\varepsilon}
+```
 
+**Renders as:**
+
+![A 2x2 matrix and bold vector notation X beta plus epsilon](images/eq-matrix.png)
+
+```latex
 % Piecewise definitions
 f(x) =
 \begin{cases}
@@ -97,6 +117,10 @@ f(x) =
     0 & \text{otherwise}
 \end{cases}
 ```
+
+**Renders as:**
+
+![Piecewise function f of x defined by cases](images/eq-cases.png)
 
 Load `amsmath` (and `amssymb` for symbols like `\mathbb{R}`) before using any of the above — plain LaTeX's `eqnarray` is deprecated; use `align` instead.
 
@@ -121,6 +145,10 @@ Use `booktabs` for rules (`\toprule`, `\midrule`, `\bottomrule`) instead of `\hl
 \end{table}
 ```
 
+**Renders as:**
+
+![Summary statistics table with income, education, and age rows](images/table-summary.png)
+
 Column spec letters: `l`/`c`/`r` for left/center/right, `p{3cm}` for a fixed-width wrapped column. Regression tables typically decimal-align on numbers — use `siunitx`'s `S` column type:
 
 ```latex
@@ -143,6 +171,10 @@ Column spec letters: `l`/`c`/`r` for left/center/right, `p{3cm}` for a fixed-wid
     \end{tabular}
 \end{table}
 ```
+
+**Renders as:**
+
+![OLS and IV regression table with decimal-aligned coefficients and standard errors](images/table-siunitx.png)
 
 Add source and definition notes below a table with `threeparttable` so the notes' width matches the table, not the page:
 
@@ -168,11 +200,19 @@ Add source and definition notes below a table with `threeparttable` so the notes
 \end{table}
 ```
 
+**Renders as:**
+
+![Summary statistics table with a notes line below it explaining standard errors and sample restriction](images/table-threeparttable.png)
+
 A cell spanning multiple columns uses `\multicolumn{n}{alignment}{text}`:
 
 ```latex
 \multicolumn{2}{c}{Dependent variable: log wage} \\
 ```
+
+**Renders as:**
+
+![A two-column header cell reading Dependent variable: log wage, spanning columns (1) and (2)](images/table-multicolumn.png)
 
 For tables generated from Stata or R (`esttab`, `estout`, `modelsummary`, `stargazer`), export directly to a `.tex` fragment and `\input{}` it rather than retyping the table by hand — this keeps the table reproducible from the underlying regression.
 
@@ -229,7 +269,13 @@ See Section~\ref{sec:results} and Table~\ref{tab:ols}.
     \item First step
     \item Second step
 \end{enumerate}
+```
 
+**Renders as:**
+
+![A footnoted sentence followed by a bulleted list and a numbered list](images/special-formatting.png)
+
+```latex
 % Appendix (after \bibliography or \printbibliography)
 \appendix
 \section{Additional Results}
@@ -306,6 +352,10 @@ Compile order is `pdflatex` → `biber` → `pdflatex` → `pdflatex` (see Setup
 
 \end{document}
 ```
+
+**Renders as** (the "Motivation" frame, after the click that reveals all bullets):
+
+![A Beamer slide titled Motivation with a bulleted list of three points](images/beamer-frame.png)
 
 ## CV template
 
